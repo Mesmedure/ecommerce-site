@@ -1,11 +1,14 @@
-function addToCart(product) {
+function addToCart(name, price) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  cart.push(product);
+  cart.push({
+    name: name,
+    price: price,
+  });
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  alert(product + " added to cart");
+  alert(name + " added to cart");
 }
 
 function loadCart() {
@@ -17,10 +20,12 @@ function loadCart() {
 
   cartList.innerHTML = "";
 
+  let total = 0;
+
   cart.forEach((item, index) => {
     let li = document.createElement("li");
 
-    li.textContent = item;
+    li.textContent = item.name + " - $" + item.price;
 
     let btn = document.createElement("button");
 
@@ -33,7 +38,14 @@ function loadCart() {
     li.appendChild(btn);
 
     cartList.appendChild(li);
+
+    total += item.price;
   });
+
+  let totalElement = document.createElement("h3");
+  totalElement.textContent = "Total: $" + total;
+
+  cartList.appendChild(totalElement);
 }
 
 function removeItem(index) {
