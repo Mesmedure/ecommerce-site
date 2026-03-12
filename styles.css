@@ -42,7 +42,7 @@ nav a {
   height: 200px;
   object-fit: cover;
 }
-/* Modern product cards */
+/* product cards */
 .product {
   background: white;
   border-radius: 10px;
@@ -53,7 +53,7 @@ nav a {
     box-shadow 0.2s;
 }
 
-/* Hover effect */
+/* hover effect */
 .product:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -65,7 +65,7 @@ nav a {
   border-radius: 8px;
 }
 
-/* Shopify-style button */
+/* button */
 button {
   background: #000;
   color: white;
